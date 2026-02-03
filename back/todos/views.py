@@ -38,9 +38,7 @@ class TodoDetailAPIView(GenericAPIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, todo_id):
-        # Просто передаємо юзера та ID в сервіс
-        # PyCharm побачить, що аргументи (user, todo_id) збігаються з дефініцією
+    def delete(self, request, todo_id)
         delete_todo(request.user, todo_id)
 
         return Response(status=status.HTTP_204_NO_CONTENT)
